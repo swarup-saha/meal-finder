@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background: rgb(29, 15, 15);
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  margin: auto;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+}
+h1,h2{
+  color: azure;
+}
+.inputText input{
+  padding: 10px;
+  margin: 0;
+  outline-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+.inputText button{
+width: 30px;
+padding: 10px;
+margin-right: 10px;
+}
+.meal{
+  position: relative;
+}
+.meal-info{
+  position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease-in;
+    opacity: 0;
+}
+.meal-info h3{
+  display: block;
+  color: whitesmoke;
+}
+.meal-info:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+.single-meal{
+  margin: 30px auto;
+    width: 70%;
+}
+.single-meal h1{
+  color: #fff;
+  letter-spacing: 0.3rem;
+}
+.single-meal img{
+  width: 300px;
+  margin: 15px;
+  border: 4px #fff solid;
+  border-radius: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.single-meal-info{
+  margin: 20px;
+    padding: 10px;
+    border: 2px #e09850 dashed;
+    border-radius: 5px;
+}
+
+.single-meal-info p{
+  color: azure;
+}
+
+.main p{
+  color: #fff;
+  letter-spacing: .5px;
+  line-height: 1.5;
+}
+.main h2{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: azure;
+
+}
+.main ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main ul li{
+  display: inline-block;
+  border: 2px solid whitesmoke;
+  padding: 5px;
+  color: #2d2013;
+  margin: 0 5px 5px 0;
+  background: whitesmoke;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.shuff-button{
+  cursor: pointer;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+}
+
+.search-button{
+  cursor: pointer;
 }
