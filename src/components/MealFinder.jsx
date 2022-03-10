@@ -10,16 +10,19 @@ const MealFinder = () => {
   const [keyword, setKeyword] = useState("");
   const [searchMode, setSearchMode] = useState(false);
   const [shuffleMode, setShuffleMode] = useState(false);
-
+  const [loading,setLoading] = useState(false)
   const searchEngine = async() => {
+    setLoading(true);
     const url = searchMode?`https://www.themealdb.com/api/json/v1/1/search.php?s=${keyword}`:`https://www.themealdb.com/api/json/v1/1/random.php`;
-    await fetch(url)
+     fetch(url)
       .then((respone) => respone.json())
       .then((res) => {
         // console.log(res.meals)
         setIngridients(res.meals);
+        setLoading(false);
       })
       .catch((e) => {
+        setLoading(false)
         console.log(e);
       });
   };
@@ -27,6 +30,7 @@ const MealFinder = () => {
     searchEngine();
   },[]);
   return (
+    loading?<><h1>Loading....</h1></>:
     <InputContext.Provider
       value={{
         ingridients: ingridients,

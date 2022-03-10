@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import InputContext from "../context/InputContext";
+import ListItem from "./ListItem";
 // import "../App.css"
 const SearchResult = () => {
   const [mealSelect, setMealSelect] = useState({});
@@ -74,9 +75,7 @@ const SearchResult = () => {
               <ul>
                 {ingrid.map((ele, index) => {
                   return (
-                    <li key={index}>
-                      {ele} - {ingridValue[index]}
-                    </li>
+                      <ListItem ele={ele} eleVal={ingridValue[index]}/>
                   );
                 })}
               </ul>
